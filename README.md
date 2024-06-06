@@ -27,4 +27,9 @@ cd eMarina
 
 Antes de nada, la carpeta de ./database que contiene la base de datos, es recomendable sacarla del proyecto.
 
-Una vez hecho eso, se abre el XAMPP, y se importa la base de datos
+Una vez hecho eso, se abre el XAMPP, y se importa la base de datos, se accede al XAMPP y se le da a importar
+
+![image](https://github.com/Pelacrack27/eMarina/assets/86014202/efbaf980-02bf-4ef6-9a47-8befdc93b835)
+
+
+
