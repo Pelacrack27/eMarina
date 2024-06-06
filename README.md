@@ -1,6 +1,7 @@
-# Nombre del Proyecto
+# eMarina
 
-Una breve descripción del proyecto, lo que hace y por qué es útil.
+Proyecto del trabajo de fin de grado del curso 2023-2024 del ciclo de DAW.
+Desarrollado por Angel, Oscar y Pelayo.
 
 ## Tabla de Contenidos
 
@@ -13,7 +14,8 @@ Una breve descripción del proyecto, lo que hace y por qué es útil.
 
 ## Instalación
 
-Instrucciones detalladas sobre cómo instalar el proyecto. Por ejemplo:
+Este proyecto se ejecuta en el IDE de eclipse.
+Primero se importa el proyecto completo.
 
 ```bash
 git clone https://github.com/usuario/nombre-del-proyecto.git
