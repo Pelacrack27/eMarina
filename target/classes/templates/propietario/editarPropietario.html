@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Marina SL - Editar Propietario</title>
+    <link rel="stylesheet" href="/css/styles.css">
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1 class="titulo"><a href="/emarina">E-Marina SL</a></h1>
+        <div class="logout">
+           <a href="/login"><span class="fas fa-sign-out-alt"></span> Logout</a>
+        </div>
+    </header>
+
+    <section class="main-content">
+    
+     <div class="inputBox">
+        <h2>Editar Propietario</h2>
+        <form id="editForm" action="/emarina/propietario/editar" method="POST">
+        
+        
+         <div class="boxDisplay">
+                    <div class="columna1">
+                    
+           <input type="hidden" name="idPropietario" th:value="${propietario.idPropietario}">
+
+            <label for="identificacion">Identificación:</label>
+            <input type="text" id="identificacion" name="identificacion" maxlength="44" required th:value="${propietario.identificacion}">
+
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" maxlength="44" required th:value="${propietario.nombre}">
+
+            <label for="apellidos">Apellidos:</label>
+            <input type="text" id="apellidos" name="apellidos" maxlength="44" required th:value="${propietario.apellidos}">
+
+
+ 			</div>
+                    <div class="columna2">
+                    
+            <label for="fnacimiento">Fecha de Nacimiento:</label>
+            <input type="date" id="fnacimiento" name="fnacimiento"  required th:value="${propietario.fnacimiento}">
+ 			<span id="ageMessage" style="color: red; display: none;">Debes ser mayor de edad para registrarte.</span>
+            
+            
+            <label for="telefono">Teléfono:</label>
+            <input type="number" id="telefono" name="telefono" min="0" required th:value="${propietario.telefono}">
+			    <span id="telefonoError" style="color: red; display: none;">El teléfono debe tener al menos 7 dígitos y no superar los 10 digitos.</span>
+
+            <label for="nacionalidad">Nacionalidad del Propietario:</label>
+            <select id="nacionalidad" name="nacionalidad" required>
+                <option value="ESPAÑOLA" th:selected="${propietario.nacionalidad} == 'ESPAÑOLA'">Española</option>
+                <option value="ITALIANA" th:selected="${propietario.nacionalidad} == 'ITALIANA'">Italiana</option>
+                <option value="FRANCESA" th:selected="${propietario.nacionalidad} == 'FRANCESA'">Francesa</option>
+                <option value="INGLESA" th:selected="${propietario.nacionalidad} == 'INGLESA'">Inglesa</option>
+                <option value="ALEMANA" th:selected="${propietario.nacionalidad} == 'ALEMANA'">Alemana</option>
+            </select>
+
+		 </div>
+		 
+		 </div>
+		 <div class="boton">
+            <button class="createButton" type="submit" id="submitButton">Guardar Cambios</button>
+            
+              </div>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 E-Marina SL. | Todos los derechos reservados</p>
+    </footer>
+
+    <script>
+      
+    function validarFormulario() {
+	    var telefonoInput = document.getElementById('telefono').value;
+	    var fecha = document.getElementById('fnacimiento').value;
+	    var telefonoError = document.getElementById('telefonoError');
+	    var ageMessage = document.getElementById('ageMessage');
+	    var submitButton = document.getElementById('submitButton');
+
+	    // Validación del número de teléfono
+	    if (telefonoInput.length < 7 || telefonoInput > 2147483647) {
+	        telefonoError.style.display = 'inline';
+	    } else {
+	        telefonoError.style.display = 'none';
+	    }
+
+	    // Validación de la fecha de nacimiento
+	    if (!fecha) {
+	        ageMessage.style.display = 'none';
+	    } else {
+	        const fechaObj = new Date(fecha);
+	        const hoy = new Date();
+	        let edad = hoy.getFullYear() - fechaObj.getFullYear();
+	        const mesesDif = hoy.getMonth() - fechaObj.getMonth();
+	        const diasDif = hoy.getDate() - fechaObj.getDate();
+
+	        if (mesesDif < 0 || (mesesDif === 0 && diasDif < 0)) {
+	            edad--;
+	        }
+
+	        if (edad < 18) {
+	            ageMessage.style.display = 'block';
+	        } else {
+	            ageMessage.style.display = 'none';
+	        }
+	    }
+
+	    // Habilitar o deshabilitar el botón de envío
+	    if (telefonoError.style.display === 'none' && ageMessage.style.display === 'none') {
+	        submitButton.disabled = false;
+	    } else {
+	        submitButton.disabled = true;
+	    }
+	}
+
+	document.getElementById('telefono').addEventListener('change', validarFormulario);
+	document.getElementById('fnacimiento').addEventListener('change', validarFormulario);
+    </script>
+</body>
+</html>
