@@ -15,7 +15,8 @@ Desarrollado por Angel, Oscar y Pelayo.
 ## Instalación
 
 Este proyecto se ejecuta en el IDE de eclipse.
-Primero se importa el proyecto completo.
+
+Primero se importa el proyecto completo. Se va a hacer en la consola de comandos.
 
 ```bash
 git clone https://github.com/Pelacrack27/eMarina
