@@ -21,5 +21,5 @@ Primero se importa el proyecto completo. Se va a hacer en la consola de comandos
 ```bash
 git clone https://github.com/Pelacrack27/eMarina
 cd eMarina
-
+```
 
