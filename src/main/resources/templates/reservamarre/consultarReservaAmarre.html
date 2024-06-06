@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lista de Reservas de Amarre</title>
+    <link rel="stylesheet" href="/css/consultar.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1><a href="/emarina">E-Marina SL</a></h1>
+        
+        <div class="logout">
+           <a href="/login"><span class="fas fa-sign-out-alt"></span> Logout</a>
+        </div>
+    </header>
+    <main>
+        <h1>Lista de Reservas de Amarre</h1>
+        <a class="createButton" href="/emarina/factura/inicioCrear">Crear Reserva de Amarre</a>
+        <table>
+            <thead>
+                <tr>
+                   
+                    <th>Fecha Inicio Reserva</th>
+                    <th>Fecha Fin Reserva</th>
+                    <th>Amarre Letra</th>
+                    <th>Amarre Número</th>
+                    <th>Matrícula del Barco</th>
+                    <th>Identificacion del Propietario del Barco</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Iterar sobre la lista de reservas de amarres -->
+                <tr th:each="reservamarre : ${reservasamarres}">
+                 
+                    <td th:text="${reservamarre.fechainicio}"></td>
+                    <td th:text="${reservamarre.fechafin}"></td>
+                    <td th:text="${reservamarre.amarre.id.letra}"></td>
+                    <td th:text="${reservamarre.amarre.id.numero}"></td>
+                    <td th:text="${reservamarre.idbarco.matricula}"></td>
+                    <td th:text="${reservamarre.idbarco.idpropietario.identificacion}"></td>
+                    <td>
+                        <a th:href="@{/emarina/reservamarre/inicioEditar(id=${reservamarre.idReservamarre})}"><i class="material-symbols-outlined">edit</i></a>
+                        <form action="/emarina/reservamarre/eliminar" method="post">
+                            <input type="hidden" name="id" th:value="${reservamarre.idReservamarre}" />
+                            <button type="submit"><i class="material-symbols-outlined">delete</i></button>
+                        </form>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+    <footer>
+        <p>&copy; 2024 E-Marina SL. | Todos los derechos reservados</p>
+    </footer>
+</body>
+</html>

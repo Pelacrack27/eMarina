@@ -1,0 +1,138 @@
+@charset "ISO-8859-1";
+/* Reseteo de estilos básicos */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: #f4f4f4;
+}
+
+header {
+  background: #001f3f;
+  color: #fff;
+  padding: 1rem;
+  display: flex;
+  position: relative;
+}
+
+.logout {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+
+.logout a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 2rem;
+}
+
+.logout a:hover {
+    color: #007bff; 
+}
+
+header h1 {
+  margin: 0;
+}
+
+header h1 a {
+  color: #fff;
+  text-decoration: none;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 2rem;
+}
+
+.createButton {
+   background-color: #007bff; 
+    color: white;
+    border: none;
+    padding: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px; 
+      text-decoration: none;
+}
+
+.createButton:hover {
+	transform: scale(0.95);
+	 transition: transform 0.3s, background 0.3s;
+   background-color: #0057b3c1;
+}
+
+table {
+  font-size: 12px;
+  margin: 45px;
+  width: 100%;
+  max-width: 1000px;
+  text-align: left;
+  border-collapse: collapse;
+  border: 1px solid #001f3f;
+}
+
+th {
+  font-size: 13px;
+  font-weight: normal;
+  padding: 8px;
+  background: #007bff;
+  border-top: 4px solid #001f3f;
+  border-bottom: 1px solid #fff;
+  color: #fff;
+  border-right: 1px solid #fff;
+}
+
+th:last-child {
+  border-right: none;
+}
+
+td {
+  padding: 8px;
+  background: #e8edff;
+  border-bottom: 1px solid #001f3f;
+  border-right: 1px solid #001f3f;
+  color: #007bff;
+}
+
+td:last-child {
+  border-right: none;
+}
+
+tr:hover td {
+  background: #d0dafd;
+  color: #339;
+}
+
+i {
+  color: #007bff;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+i:hover {
+  color: #0056b3;
+}
+
+footer {
+    background-color: #001f3f; /* azul marino */
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+   
+    bottom: 0;
+    width: 100%;
+}
+
+

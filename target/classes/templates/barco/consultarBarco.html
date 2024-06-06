@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lista de Barcos</title>
+    <link rel="stylesheet" href="/css/consultar.css">
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+<body>
+    <header>
+        <h1><a href="/emarina">E-Marina SL</a></h1>
+        
+        <div class="logout">
+          <a href="/login"><span class="fas fa-sign-out-alt"></span> Logout</a>
+        </div>
+    </header>
+    <main>
+        <h1>Lista de Barcos</h1>
+        <a class="createButton" href="/emarina/barco/inicioCrear">Crear barco</a>
+        <table>
+            <thead>
+                <tr>
+                    <th>Matrícula</th>
+                    <th>Eslora</th>
+                    <th>Manga</th>
+                    <th>Propulsión</th>
+                    <th>Es Catamarán</th>
+                    <th>Ocupantes</th>
+                    <th>Teléfono Armador</th>
+                    <th>Nacionalidad</th>
+                    <th>Propietario</th> 
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+              
+                <tr th:each="barco : ${barcos}">
+                    <td th:text="${barco.matricula}"></td>
+                    <td th:text="${barco.eslora}"></td>
+                    <td th:text="${barco.manga}"></td>
+                    <td th:text="${barco.propulsion}"></td>
+                    <td th:text="${barco.iscatamaran ? 'Sí' : 'No'}"></td>
+                    <td th:text="${barco.ocupantes}"></td>
+                    <td th:text="${barco.telefono_armador}"></td>
+                    <td th:text="${barco.nacionalidad}"></td>
+                    <td th:text="${barco.idpropietario.nombre} + ' ' + ${barco.idpropietario.apellidos}"></td> <!-- Mostrar nombre y apellidos del propietario -->
+                    <td>
+                    
+                      <a th:href="@{/emarina/barco/inicioEditar(id=${barco.idBarco})}"><i class="material-symbols-outlined">edit</i></a>                   
+                        <form action="/emarina/barco/eliminar" method="post">
+					    <input type="hidden" name="id" th:value="${barco.idBarco}" />
+					    <button type="submit"><i class="material-symbols-outlined">delete</i></button>
+					</form>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+    <footer>
+        <p>&copy; 2024 E-Marina SL. | Todos los derechos reservados</p>
+    </footer>
+</body>
+</html>

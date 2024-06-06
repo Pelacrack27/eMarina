@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Puertos Deportivos</title>
+   <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+<body>
+    <header>
+        <h1><a href="/emarina">E-Marina SL</a></h1>
+        <button id="infoBtn">Información geográfica + VHF</button>
+        <div class="logout">
+          <a href="/login"><span class="fas fa-sign-out-alt"></span> Logout</a>
+        </div>
+    </header>
+    <main>
+        <div id="infoModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h3>Coordenadas proyectadas (Lat, Long): 43.429, -3.811 (WGS 1984)</h3>
+                <h3>VHF: Canal 9</h3>
+            </div>
+        </div>
+        <div class="container">
+            <div class="image-container">
+                <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/402746100.jpg?k=2be109680f5aa0938060f82d1045693b566476677c5dd3d00c7765c8f77ac734&o=&hp=1" alt="Puerto Deportivo">
+            </div>
+            <nav class="menu">
+                <ul>
+                    <li><a href="/emarina/propietario/consultar">Consultar Propietarios</a></li>
+                    <li><a href="/emarina/barco/consultar">Consultar Barcos</a></li>
+                    <li><a href="https://experience.arcgis.com/experience/fca61f793b9f406d9c712bf9396ad883/?draft=true">Consultar Amarres</a></li>
+                    <li><a href="/emarina/reservamarre/consultar">Consultar Reservas de Amarres</a></li>
+                    <li><a href="/emarina/pago/consultar">Consultar Pagos de Facturas</a></li>
+                    
+                </ul>
+            </nav>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 E-Marina | Todos los derechos reservados</p>
+    </footer>
+</body>
+</html>
+  <script src="/scripts/index.js"></script>
+
