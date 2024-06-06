@@ -18,8 +18,13 @@ Este proyecto se ejecuta en el IDE de eclipse.
 
 Primero se importa el proyecto completo. Se va a hacer en la consola de comandos.
 
+Es necesario tener el git bash instalado, se puede instalar desde [aquí](https://www.git-scm.com/download/win)
+
 ```bash
 git clone https://github.com/Pelacrack27/eMarina
 cd eMarina
 ```
 
+Antes de nada, la carpeta de ./database que contiene la base de datos, es recomendable sacarla del proyecto.
+
+Una vez hecho eso, se abre el XAMPP, y se importa la base de datos
