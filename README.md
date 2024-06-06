@@ -18,7 +18,7 @@ Este proyecto se ejecuta en el IDE de eclipse.
 Primero se importa el proyecto completo.
 
 ```bash
-git clone https://github.com/usuario/nombre-del-proyecto.git
-cd nombre-del-proyecto
-npm install
+git clone https://github.com/Pelacrack27/eMarina
+cd eMarina
+
 
