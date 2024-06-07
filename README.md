@@ -62,7 +62,7 @@ Ahora se puede usar y probar
 
 # Licencia
 
-MIT License
+[MIT License](https://opensource.org/license/mit)
 
 Copyright (c) 2024 Pelacrack27
 
