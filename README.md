@@ -16,6 +16,7 @@ Desarrollado por Angel, Oscar y Pelayo.
 ## Prerequisitos
 
 [Eclipse IDE for Java Developers](https://www.eclipse.org/downloads/packages/release/kepler/sr1/eclipse-ide-java-developers)
+
 [XAMPP](https://www.apachefriends.org/es/download.html)
 
 
