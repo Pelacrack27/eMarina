@@ -5,12 +5,21 @@ Desarrollado por Angel, Oscar y Pelayo.
 
 ## Tabla de Contenidos
 
+- [Prerequisitos](#prerequisitos)
 - [Instalación](#instalación)
 - [Uso](#uso)
 - [Contribución](#contribución)
 - [Licencia](#licencia)
 - [Contacto](#contacto)
 - [Agradecimientos](#agradecimientos)
+
+## Prerequisitos
+
+[Eclipse IDE for Java Developers](https://www.eclipse.org/downloads/packages/release/kepler/sr1/eclipse-ide-java-developers)
+[XAMPP](https://www.apachefriends.org/es/download.html)
+
+
+
 
 ## Instalación
 
@@ -31,5 +40,5 @@ Una vez hecho eso, se abre el XAMPP, y se importa la base de datos, se accede al
 
 ![image](https://github.com/Pelacrack27/eMarina/assets/86014202/efbaf980-02bf-4ef6-9a47-8befdc93b835)
 
-
+Una vez descargado, se inicia el XAMPP
 
